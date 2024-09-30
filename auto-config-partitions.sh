@@ -1,4 +1,4 @@
-#!/bin/bash
+/#!/bin/bash
 
 #URL for config file
 FILE_URL="https://raw.githubusercontent.com/mht-source/nixos-config/refs/heads/main/disko-config.nix"
@@ -17,7 +17,7 @@ echo "Downloading $FILENAME to $DESTINATION_PATH..."
 curl -L -o "$DESTINATION_PATH/$FILENAME" "$FILE_URL"
 
 # Check if dowloading completed succesfull
-if [$? -eq 0]; then
+if [ $? -eq 0 ]; then
 	echo "$FILENAME downloaded succesfully to $DESTINATION_PATH."
 else
 	echo "Error downloading file $FILENAME."

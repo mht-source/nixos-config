@@ -18,7 +18,7 @@
 
 	            type = "EF00";  # EFI partycja
 
-	            size = "500M";  # Rozmiar 500MB
+	            size = "1G";  # Rozmiar 1GB
 
 	            content = {
 
@@ -28,7 +28,7 @@
 
 	              mountpoint = "/boot";
 		      
-		      extraArgs= "-n boot"; # Add label boot
+		      extraArgs = ["-nboot"]; # Add label boot
 
 	            };
 
@@ -41,6 +41,7 @@
 	            content = {
 
 	              type = "swap";
+		      extraArgs = ["-Lswap"];
 
 	            };
 
@@ -57,7 +58,7 @@
 	              format = "ext4";
 
 	              mountpoint = "/";
- 	              extraArgs = "-L nixos"; # Add label nixos
+ 	              extraArgs = ["-Lnixos"]; # Add label nixos
 
 	            };
 

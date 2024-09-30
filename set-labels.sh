@@ -14,15 +14,15 @@ FILENAME="disko-config.nix"
 
 # Dowload file to path
 echo "Downloading $FILENAME to $DESTINATION_PATH..."
-curl -L -o "DESTINATION_PATH/$FILENAME" "$FILE_URL"
+curl -L -o "$DESTINATION_PATH/$FILENAME" "$FILE_URL"
 
 # Check if dowloading completed succesfull
 if [$? -eq 0]; then
-	echo "FILENAME downloaded succesfully to $DESTINATION_PATH."
+	echo "$FILENAME downloaded succesfully to $DESTINATION_PATH."
 else
 	echo "Error downloading file $FILENAME."
 	exit 1
-fi 
+fi
 
 # Install required packages if they are not installed
 echo "Checking and installing required packages..."

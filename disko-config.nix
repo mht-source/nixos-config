@@ -7,7 +7,10 @@
 	      content = {
 	        type = "gpt";
 	        partitions = {
-	          efi = {
+		  boot = {
+		    size = "1M"
+		    type = "EF02"; # Partition for GRUB MBR
+	          ESP = {
 	            type = "EF00";  # EFI partition
 	            size = "1G";  # Size 1GB
 	            content = {
